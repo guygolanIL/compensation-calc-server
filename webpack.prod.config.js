@@ -1,5 +1,4 @@
 const path = require('path');
-const WebpackShellPlugin = require('webpack-shell-plugin');
 const nodeExternals = require('webpack-node-externals');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -10,7 +9,7 @@ const config = {
     devtool: 'inline-source-map',
     plugins: [
         new CopyWebpackPlugin([
-            { from: 'src/public', to: OUTPUT_FOLDER + '/static' }
+            {from: 'src/public', to: 'public'}
         ])
     ],
     target: "node",
@@ -25,7 +24,7 @@ const config = {
         ],
     },
     resolve: {
-        extensions: [ '.tsx', '.ts', '.js' ],
+        extensions: ['.tsx', '.ts', '.js'],
     },
     mode: 'production',
     output: {
