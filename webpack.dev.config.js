@@ -29,8 +29,7 @@ const config = {
   },
 };
 
-if (config.mode !== 'production') {
-  config.plugins.push(new WebpackShellPlugin({onBuildEnd: [`nodemon ${OUTPUT_FOLDER}/bundle.js`]}));
-}
+
+config.plugins.push(new WebpackShellPlugin({onBuildEnd: [`nodemon ${OUTPUT_FOLDER}/bundle.js`]}));
 
 module.exports = config;
