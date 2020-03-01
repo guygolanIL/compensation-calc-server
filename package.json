@@ -9,6 +9,7 @@
     "build": "webpack --config webpack.prod.config.js",
     "startDevelop": "webpack --watch",
     "publishHeroku": "git push heroku master",
+    "heroku-prebuild": "npm install --dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "heroku-prebuild": "npm install --dev",
