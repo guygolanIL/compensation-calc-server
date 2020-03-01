@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch",
+    "start": "npm run build && node dist/bundle.js",
+    "build": "webpack",
+    "startDevelop": "webpack --watch",
     "publishHeroku": "git push heroku master",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
