@@ -9,4 +9,4 @@ export const applyRoutes = (app: Application) => {
     app.use('/data', (req, res) => {
         res.send(FetchersData.getInstance().getData());
     });
-}
+};

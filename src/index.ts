@@ -1,6 +1,6 @@
 import express, { Application } from "express";
 import scheduler from "node-schedule";
-import { applyRoutes } from "./routes/index";
+import { applyRoutes } from "./routes";
 import { applyConfig, port } from "./appConfig";
 import { fetchPay, IIntegrationData } from "./payFetchers/fetchPay";
 import { FetchersData } from "./payFetchers/FetchersData";
@@ -23,9 +23,7 @@ const job = scheduler.scheduleJob("Fetch data", fetchDataRule, () => {
 
 applyRoutes(app);
 
-app.listen(port, (err) => {
-
-    if(err) throw 'failed to start server';
+app.listen(port, () => {
 
     console.log(`Server started at port ${port}`);
     job.invoke();
