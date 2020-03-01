@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build",
+    "start": "npm run build && node .dist/bundle.js",
     "buildDev": "webpack --config webpack.dev.config.js",
     "build": "webpack --config webpack.prod.config.js",
     "startDevelop": "webpack --watch",
